@@ -1,0 +1,216 @@
+.poem-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poem-container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(45, 27, 105, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: linear-gradient(135deg, #9f7aea 0%, #667eea 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #5a6fd8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(159, 122, 234, 0.4);
+}
+
+.poem-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+.poem-title {
+  font-size: 3rem;
+  color: #2d1b69;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', serif;
+}
+
+.poem-subtitle {
+  font-size: 1.2rem;
+  color: #553c9a;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.poem-content {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.poem-text {
+  text-align: center;
+  max-width: 600px;
+}
+
+.verse {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #2d1b69;
+  margin-bottom: 2rem;
+  font-family: 'Georgia', serif;
+  font-weight: 400;
+  position: relative;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(159, 122, 234, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
+  border-radius: 15px;
+  border-left: 4px solid #9f7aea;
+  transition: all 0.3s ease;
+}
+
+.verse:hover {
+  background: linear-gradient(135deg, rgba(159, 122, 234, 0.15) 0%, rgba(102, 126, 234, 0.15) 100%);
+  transform: translateX(5px);
+}
+
+.verse:last-child {
+  margin-bottom: 0;
+}
+
+.poem-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(159, 122, 234, 0.3);
+}
+
+.poem-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.share-button, .favorite-button {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.share-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.share-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.favorite-button {
+  background: linear-gradient(135deg, #9f7aea 0%, #b794f6 100%);
+  color: white;
+}
+
+.favorite-button:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(159, 122, 234, 0.4);
+}
+
+/* Efectos decorativos */
+.poem-container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #9f7aea, #667eea, #764ba2, #b794f6);
+  border-radius: 25px;
+  z-index: -1;
+  animation: borderAnimation 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderAnimation {
+  0% {
+    background: linear-gradient(45deg, #9f7aea, #667eea, #764ba2, #b794f6);
+  }
+  100% {
+    background: linear-gradient(45deg, #b794f6, #764ba2, #667eea, #9f7aea);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .poem-page {
+    padding: 1rem;
+  }
+  
+  .poem-container {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .back-button {
+    position: static;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+  }
+  
+  .poem-title {
+    font-size: 2.5rem;
+  }
+  
+  .verse {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  
+  .poem-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .poem-container {
+    padding: 1.5rem;
+  }
+  
+  .poem-title {
+    font-size: 2rem;
+  }
+  
+  .verse {
+    font-size: 1.1rem;
+  }
+}
