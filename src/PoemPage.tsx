@@ -1,8 +1,7 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PoemPage.css';
 
-const PoemPage: React.FC = () => {
+const PoemPage = () => {
   const navigate = useNavigate();
 
   return (
